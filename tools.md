@@ -6,4 +6,5 @@
    :caption: Contents
 
    tools/gurobi
+   tools/conda-incantations
 ```
