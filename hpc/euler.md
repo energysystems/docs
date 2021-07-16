@@ -104,6 +104,23 @@ export https_proxy=http://proxy.ethz.ch:3128
 export http_proxy=http://proxy.ethz.ch:3128
 ```
 
+## Handling non-LSF tasks with long runtime
+
+Sometimes, you may want to perform tasks with long runtime and you do not want or cannot run them on LSF. One such example is Snakemake, whose main process runs on the login nodes of Euler issuing jobs to LSF one after the other. Such Snakemake workflows can easily run for hours or even days.
+
+Long-running tasks can be tricky, as tasks running within a shell session get killed whenever the session gets closed. A session can often be closed unintentionally when your (VPN) connection to Euler drops.
+
+There are two ways of ensuring your long-running tasks survive connection drops. The first is to issue your command with a [no-hangup command](https://en.wikipedia.org/wiki/Nohup). This will ensure your process survives connection drops but you won't be able to easily see command line logs and you also risk loosing any other session-level configuration you made before loosing connection (activating conda environments, navigating to paths, setting environment variables etc).
+
+To ensure the entire session survives, the second option to issue long-running tasks is [screen](https://en.wikipedia.org/wiki/GNU_Screen). Screen keeps the shell session alive as long as either you close the session or the server gets shut down. Screen is pre-installed on Euler. The main commands are the following:
+
+1. `screen -S <name-of-session>`: Start a new shell session.
+2. `CTRL + A + D`: Leave the current session but keep it alive.
+3. `screen -r <name-of-session>`: Reconnect to an existing shell session.
+4. `screen -ls`: List all available shell sessions.
+
+**No matter whether you choose the no-hangup command or screen, be aware of the following.** When you ssh into euler.ethz.ch, you'll get connected to one of ~30 different login nodes (allocation is based on load). Therefore, when you reconnect, you may _not_ end up on the login node where your screen or no-hangup command is running. To overcome this, you can login directly to always the same node (for example eu-login-20.euler.ethz.ch). This has the disadvantage that your chosen login node may be heavy loaded while others aren't and it may not be the preferred option by cluster support.
+
 ## Receiving notifications
 
 When executing long-running workflows on Euler, you may want to get notified whenever workflows terminate. For individual jobs, you can use [built-in mechanisms](https://scicomp.ethz.ch/wiki/LSF_mini_reference). For entire workflows, you can send emails to yourself. This feature had been disabled with the [reopening of Euler in May 2020](https://scicomp.ethz.ch/wiki/Reopening_of_Euler_and_Leonhard_(May_2020)) but is available again as of July 2021. You can send an email without body like so:
