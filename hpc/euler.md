@@ -106,9 +106,13 @@ export http_proxy=http://proxy.ethz.ch:3128
 
 ## Receiving notifications
 
-When executing long-running workflows on Euler, you may want to get notified whenever workflows terminate. For individual jobs, you can use [built-in mechanisms](https://scicomp.ethz.ch/wiki/LSF_mini_reference). For entire workflows, you can, in principle, send emails to yourself. However, this feature has been disabled with the [reopening of Euler in May 2020](https://scicomp.ethz.ch/wiki/Reopening_of_Euler_and_Leonhard_(May_2020)).
+When executing long-running workflows on Euler, you may want to get notified whenever workflows terminate. For individual jobs, you can use [built-in mechanisms](https://scicomp.ethz.ch/wiki/LSF_mini_reference). For entire workflows, you can send emails to yourself. This feature had been disabled with the [reopening of Euler in May 2020](https://scicomp.ethz.ch/wiki/Reopening_of_Euler_and_Leonhard_(May_2020)) but is available again as of July 2021. You can send an email without body like so:
 
-Alternatively, and as long as email sending is not possible, you may want to use [IFTTT](https://ifttt.com/my_applets). IFTTT can send you mails, send push notifications to your phone, and do all sorts of much more weird things. The idea is quite simple: you trigger a webhook and that triggers a notification service. Using Python you can do the following to trigger webhooks:
+```bash
+mail -s 'mail subject' <receiver-email-address>"
+```
+
+Alternatively, and as long as email sending is not possible for whatever reason, you may want to use [IFTTT](https://ifttt.com/my_applets). IFTTT can send you mails, send push notifications to your phone, and do all sorts of much more weird things. The idea is quite simple: you trigger a webhook and that triggers a notification service. Using Python you can do the following to trigger webhooks:
 
 ```python
 import requests
