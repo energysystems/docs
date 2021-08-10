@@ -144,3 +144,12 @@ requests.post(
 ```
 
 In addition, you need an IFTTT applet that listens to the webhook and reacts to it. [Here's a full example](https://pimylifeup.com/using-ifttt-with-the-raspberry-pi/) that shows how to build and trigger the applet.
+
+## Check storage usage
+
+There are upper limits of the number of files and total file size that we are not allowed to exceed. So far, the number of files seems to be more problematic which is caused to a large extent by anaconda. 
+
+
+`lquota .` will give you an overview of the group-wide quotas in the current directory. 
+
+`find . -type f | cut -d/ -f2 | sort | uniq -c` gives you an overview of the number of files in the subdirectories of the current directory. You can use it to understand how badly you contribute to the overall number of files in the group.  
