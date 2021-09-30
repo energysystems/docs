@@ -128,3 +128,11 @@ You should also see the results from the model run in the form of a new file, `t
 ## Where to go next
 
 See here for more documentation [about job running on the cluster](https://docs.google.com/presentation/d/10A0_0eNRBYd87E1h1YN6bsIFaZaua5qJkfBbnBKAr6o/present) and [about the cluster more generally](http://insy.ewi.tudelft.nl/content/hpc-cluster) (e.g., how to transfer files).
+
+## Tips & tricks for a smooth use of Calliope
+
+When using Calliope with the Gurobi solver, the latter might lead to unwanted CPU usage and to the job being killed by HPC staff. In fact, by default, Gurobi tries to launch multiple optimisation algorithms in parallel when searching for the problem solution, both to check which one is faster and to have a more robust numeric result. However, this means in practice that Gurobi ignores the requested amount of threads allocated (in the `jobscript.sbatch`) to solve the problem and starts spawning additional threads and processes, which makes CPU usage skyrocket far above what originally requested. 
+
+Trying to increase the number of CPU's in your jobscript is (in general) a bad workaround. Typically, you do not need so many threads for Gurobi to be fast enough in finding a solution; and, after a certain progressive number of parallel threads, the speed of resolution does not change at all.
+
+So, you may want to ask Calliope to use less threads for the Gurobi solver. This is configurable in the YAML config file of Calliope itself, as described on its [documenation](https://calliope.readthedocs.io/en/stable/user/advanced_features.html)
