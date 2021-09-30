@@ -131,8 +131,14 @@ See here for more documentation [about job running on the cluster](https://docs.
 
 ## Tips & tricks for a smooth use of Calliope
 
-When using Calliope with the Gurobi solver, the latter might lead to unwanted CPU usage and to the job being killed by HPC staff. In fact, by default, Gurobi tries to launch multiple optimisation algorithms in parallel when searching for the problem solution, both to check which one is faster and to have a more robust numeric result. However, this means in practice that Gurobi ignores the requested amount of threads allocated (in the `jobscript.sbatch`) to solve the problem and starts spawning additional threads and processes, which makes CPU usage skyrocket far above what originally requested. 
+When using Calliope with the Gurobi solver, the latter might lead to unwanted CPU usage and to the job being killed by HPC staff. In fact, by default, Gurobi tries to launch multiple optimisation algorithms in parallel when searching for the problem solution, both to check which one is faster and to have a more robust numeric result. However, this means in practice that Gurobi ignores the requested amount of threads allocated in the `jobscript.sbatch` to solve the problem and starts spawning additional threads and processes, which makes CPU usage skyrocket far above what originally requested and the job be terminated. 
 
-Trying to increase the number of CPU's in your jobscript is (in general) a bad workaround. Typically, you do not need so many threads for Gurobi to be fast enough in finding a solution; and, after a certain progressive number of parallel threads, the speed of resolution does not change at all.
+Trying to increase the number of CPU's in your jobscript is (in general) a bad workaround. Typically, you do not need so many threads for Gurobi to be fast enough in finding a solution; and, after a certain progressive number of parallel threads, the speed of resolution should not change at all.
 
-So, you may want to ask Calliope to use less threads for the Gurobi solver. This is configurable in the YAML config file of Calliope itself, as described on its [documenation](https://calliope.readthedocs.io/en/stable/user/advanced_features.html)
+So, it's a good idea to explicitly ask Calliope to use less threads for the Gurobi solver. This is configurable in the YAML config file of Calliope itself, as described on its [documenation](https://calliope.readthedocs.io/en/stable/user/advanced_features.html) (section "Specifying custom solver options/Gurobi"). In short, you need to add a `Threads` specification to the solver options, e.g.:
+```
+run:
+    solver: gurobi
+    solver_options:
+        Threads: 3
+```
