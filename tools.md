@@ -5,6 +5,6 @@
    :maxdepth: 2
    :caption: Contents
 
+   tools/conda
    tools/gurobi
-   tools/conda-incantations
 ```

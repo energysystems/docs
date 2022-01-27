@@ -1,6 +1,12 @@
-# Conda incantations
+# Conda
 
-Mostly useful `conda` gotchas
+1. Conda is XXXXXX
+
+2. Install it from: https://conda.io/miniconda.html
+
+3. Use mamba instead of conda: `conda install mamba -n base -c conda-forge`
+
+The rest of this page is some mostly useful `conda` gotchas.
 
 ## Configuration management
 
