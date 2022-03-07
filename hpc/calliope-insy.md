@@ -127,7 +127,7 @@ You should also see the results from the model run in the form of a new file, `t
 
 ## Where to go next
 
-See here for more documentation [about job running on the cluster](https://docs.google.com/presentation/d/10A0_0eNRBYd87E1h1YN6bsIFaZaua5qJkfBbnBKAr6o/present) and [about the cluster more generally](http://insy.ewi.tudelft.nl/content/hpc-cluster) (e.g., how to transfer files).
+See here for more documentation [about job running on the cluster](https://docs.google.com/presentation/d/10A0_0eNRBYd87E1h1YN6bsIFaZaua5qJkfBbnBKAr6o/present?slide=id.p) and [about the cluster more generally](https://wiki.tudelft.nl/bin/view/Research/InsyCluster/WebHome) (e.g., how to transfer files).
 
 ## Tips & tricks for a smooth use of Calliope
 
