@@ -10,7 +10,7 @@
 
 **Next chance to participate**: 2022 (date yet to be communicated; last year, it was the end of September)
 
-**Website**: www.energymodellingplatform.eu 
+**Website**: [www.energymodellingplatform.eu](www.energymodellingplatform.eu)
 
 
 ## Open Energy Modelling Initiative (OpenMod) workshops
@@ -23,7 +23,7 @@
 
 **Next chance to participate**: 2022 or 2023 (there has been an online mini-workshop in February 2022; not clear if there will be anything else this year)
 
-**Website**: https://forum.openmod.org/t/next-openmod-workshop/2890 
+**Website**: [forum.openmod.org/t/next-openmod-workshop/2890](https://forum.openmod.org/t/next-openmod-workshop/2890)
 
 
 ## International Energy Workshop
@@ -36,7 +36,7 @@
 
 **Next chance to participate**: 2023 (deadlines for paper submission are usually in late January or early February; the conference is in May or June)
 
-**Website**: www.internationalenergyworkshop.org 
+**Website**: [www.internationalenergyworkshop.org](www.internationalenergyworkshop.org)
 
 
 
