@@ -34,7 +34,7 @@
 
 **Publishing options**: Conference proceedings. 
 
-**Next chance to participate**: 2023
+**Next chance to participate**: 2023 (deadlines for paper submission are usually in late January or early February; the conference is in May or June)
 
 **Website**: www.internationalenergyworkshop.org 
 
