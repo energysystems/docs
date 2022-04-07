@@ -25,3 +25,18 @@
 
 **Website**: https://forum.openmod.org/t/next-openmod-workshop/2890 
 
+
+## International Energy Workshop
+
+**In brief**: Quite a well-established energy modelling conference, tightly connected to the International Energy Agency (IEA). Compared to other conferences mentioned here (such as the EMP-E or the OpenMod workshops), it features a relatively higher amount of researchers from the economics and Integrated Assessment Modelling fields.
+
+**What you can present**: You can submit either a full paper or just a long abstract, which you can then present in a session.
+
+**Publishing options**: Conference proceedings. 
+
+**Next chance to participate**: 2023
+
+**Website**: www.internationalenergyworkshop.org 
+
+
+
