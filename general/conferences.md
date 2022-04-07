@@ -39,4 +39,13 @@
 **Website**: [www.internationalenergyworkshop.org](www.internationalenergyworkshop.org)
 
 
+----for PhD students------
+## IIASA YSSP PhD summer school
 
+**In brief**: 3-month fully funded summer school at IIASA, Austria (Check whether your home country could provide this scholarship. Last time Italy does not.) Nice networking and learning opportunities for ealry-stage PhD students (although I, Fei, didn't get in this year). @Stefan and Tony Patt worked there before. It makes sense to approach them for more info.
+
+**What you can expect**: Collaborating with one research group at IIASA aiming to publish a nice paper together. Also a good way to expand your network.
+
+
+**Next chance to participate**: Fall 2022 - Ealry 2023 (Application&Research proposal); Summer school (June - August, three months with full shcolarship)
+**Website**: [https://previous.iiasa.ac.at/web/home/education/yssp/Apply/ConditionsEligibility/Application_Information.html](https://previous.iiasa.ac.at/web/home/education/yssp/Apply/ConditionsEligibility/Application_Information.html)
