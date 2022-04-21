@@ -39,6 +39,19 @@
 **Website**: [www.internationalenergyworkshop.org](www.internationalenergyworkshop.org)
 
 
+## International Symposium for Next Generation Infrastructure (ISNGI)
+
+**In brief**: An apparently well-established, large conference on infrastructure planning, including energy infrastructure. This year (2022) it's in Rotterdam and organised by some of our TPM colleagues.
+
+**What you can present**: You can submit a medium-lenght abstract, which you can then present in a session or by means of a poster.
+
+**Publishing options**: Selected papers get published in a Special Issue of a peer-reviewed Journal. 
+
+**Next chance to participate**: 2022 (deadlines for abstract submission: April 30th; the conference is in September)
+
+**Website**: [www.isngi.org](https://isngi.org/call-for-abstracts/)
+
+
 ----for PhD students------
 ## IIASA YSSP PhD summer school
 
