@@ -8,4 +8,5 @@
    hpc/euler
    hpc/calliope-euler
    hpc/calliope-insy
+   hpc/calliope-delftblue
 ```
