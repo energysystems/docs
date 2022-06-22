@@ -5,7 +5,7 @@
 Having set-up the basic cluster access (see the cluster [Wiki](https://gitlab.tudelft.nl/dhpc/docs/-/wikis/home)), you need first of all to load some software modules with the following commands:
 
 ```bash
-module load 2022r2 compute
+module load 2022r2
 module load  miniconda3/4.10.3-eyq4jvx
 ```
 
@@ -61,7 +61,7 @@ Look for: `/home/<netid>/.bashrc`. The file might be hidden if you have set up f
 Edit this file (e.g., with a text editor) and add the following lines to the end of the file:
 
 ```bash
-module load 2022r2 compute
+module load 2022r2
 module load  miniconda3/4.10.3-eyq4jvx 
 ```
 
@@ -118,3 +118,5 @@ sbatch test_job.sbatch
 A few minutes later you should see an output log file of the with a name like `slurm-[job_id].out`. It should show that Calliope ran successfully.
 
 You should also see the results from the model run in your results folder.
+
+To check the status of a job while it is in the queue, you can type: `squeue -u <your-username>`
