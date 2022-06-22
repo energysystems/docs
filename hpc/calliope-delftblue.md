@@ -99,6 +99,7 @@ To do so, create an empty text file and name it, e.g., `test_job.sbatch`. Then, 
 #SBATCH --cpus-per-task=16
 #SBATCH --mem-per-cpu=8G
 #SBATCH --mail-type=END
+#SBATCH --account=research-tpm-ess ### If you are a MSc student, please use the following account code: --account=education-<faculty>-msc
 
 srun ../my_national_model_run.py
 ```
