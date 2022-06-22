@@ -5,7 +5,7 @@
 Having set-up the basic cluster access (see the cluster [Wiki](https://gitlab.tudelft.nl/dhpc/docs/-/wikis/home)), you need first of all to load some software modules with the following commands:
 
 ```bash
-module load 2022r1 compute
+module load 2022r2 compute
 module load  miniconda3/4.10.3-eyq4jvx
 ```
 
@@ -61,7 +61,7 @@ Look for: `/home/<netid>/.bashrc`. The file might be hidden if you have set up f
 Edit this file (e.g., with a text editor) and add the following lines to the end of the file:
 
 ```bash
-module load 2022r1 compute
+module load 2022r2 compute
 module load  miniconda3/4.10.3-eyq4jvx 
 ```
 
@@ -99,6 +99,7 @@ To do so, create an empty text file and name it, e.g., `test_job.sbatch`. Then, 
 #SBATCH --cpus-per-task=16
 #SBATCH --mem-per-cpu=8G
 #SBATCH --mail-type=END
+#SBATCH --account=research-tpm-ess ### If you are a MSc student, please use the following account code: --account=education-<faculty>-msc
 
 srun ../my_national_model_run.py
 ```
