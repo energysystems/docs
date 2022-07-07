@@ -6,7 +6,7 @@ Having set-up the basic cluster access (see the cluster [Wiki](https://gitlab.tu
 
 ```bash
 module load 2022r2
-module load  miniconda3/4.10.3-eyq4jvx
+module load  miniconda3/4.12
 ```
 
 For a basic Calliope+Gurobi installation (i.e., you can skip this if you plan to use Euro-Calliope or similar software in which Calliope is already sub-package) you should then be able to run:
