@@ -25,28 +25,29 @@ conda install -c conda-forge calliope
 
 ## File transfer from local machine to cluster
 
-Most default Linux file managers support SFTP out of the box. By simply putting `sftp://<netid>@login.delftblue.tudelft.nl` in the address bar you can access the cluster on your local machine and easily transfer files. 
+Most default Linux file managers support SFTP out of the box. By simply putting `sftp://<netid>@login.delftblue.tudelft.nl` in the address bar you can access the cluster on your local machine and easily transfer files.
 
 For different OS, check out the cluster [Wiki/Data-transfer](https://gitlab.tudelft.nl/dhpc/docs/-/wikis/Data-transfer-to-DelftBlue).
 
+A general recommendation is to learn and use [`rsync`](https://gitlab.tudelft.nl/dhpc/docs/-/wikis/Data-transfer-to-DelftBlue#rsync), which is useful beyond DelftBlue and runs on all operating systems.
 
 ## Installation (specific Calliope environment + Gurobi)
 
-If you want to install a different version of Calliope, say one that runs within a broader Euro-Calliope environment, you can avoid installing the basic Calliope and install the desired version directly. 
+If you want to install a different version of Calliope, say one that runs within a broader Euro-Calliope environment, you can avoid installing the basic Calliope and install the desired version directly.
 
 For North-Sea Calliope (but the same applies to other Euro-Calliope pre-built models), for instance, you need to first move the `requirements.yml` to your home or proejct directory on the cluster. Then, move to such a directory and run the following:
 
 ```bash
 conda env create -f requirements.yml
-``` 
+```
 
-One the environment is created, activate it (beware: you may need to log off and log in again to be able to do so): 
+One the environment is created, activate it (beware: you may need to log off and log in again to be able to do so):
 
 ```bash
 conda activate northseacalliope_2022_05_20
 ```
 
-and install Gurobi via: 
+and install Gurobi via:
 
 ```bash
 conda install -c gurobi gurobi
@@ -62,7 +63,7 @@ Edit this file (e.g., with a text editor) and add the following lines to the end
 
 ```bash
 module load 2022r2
-module load  miniconda3/4.10.3-eyq4jvx 
+module load  miniconda3/4.10.3-eyq4jvx
 ```
 
 This will make sure that such modules are always loaded whenever you login.
@@ -83,12 +84,12 @@ TOKENSERVER=flexserv-x1.tudelft.nl
 PORT=27099
 ```
 
-## Seting up a cluster job and running
+## Setting up a cluster job and running
 
-To run your model, you'll need to set up a cluster job. That's the only additional step required compared to running on your local machine. For generic information of what this means, you can once more have a look at the cluster [Wiki/SLURM-scheduler](https://gitlab.tudelft.nl/dhpc/docs/-/wikis/Slurm-scheduler).
+To run your model, you'll need to set up a cluster job. That's the only additional step required compared to running on your local machine. For generic information of what this means, you can once more have a look at [DelftBlue's documentation on the Slurm scheduler](https://gitlab.tudelft.nl/dhpc/docs/-/wikis/Slurm-scheduler).
 
 In a nutshell, all you need to do is creating an .sbatch file that specifies the requirements of your job.
-To do so, create an empty text file and name it, e.g., `test_job.sbatch`. Then, open it with a text editor and make sure that the file contains the following information (see [Wiki/SLURM-scheduler](https://gitlab.tudelft.nl/dhpc/docs/-/wikis/Slurm-scheduler) for the meaning of each line):
+To do so, create an empty text file and name it, e.g., `test_job.sbatch`. Then, open it with a text editor and make sure that the file contains the following information (see [Slurm scheduler](https://gitlab.tudelft.nl/dhpc/docs/-/wikis/Slurm-scheduler) for the meaning of each line):
 
 ```
 #!/bin/sh
@@ -96,12 +97,16 @@ To do so, create an empty text file and name it, e.g., `test_job.sbatch`. Then, 
 #SBATCH --partition=compute
 #SBATCH --time=01:00:00
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=16
-#SBATCH --mem-per-cpu=8G
+#SBATCH --cpus-per-task=2
+#SBATCH --mem-per-cpu=16G
 #SBATCH --mail-type=END
 #SBATCH --account=research-tpm-ess ### If you are a MSc student, please use the following account code: --account=education-<faculty>-msc
 
 srun ../my_national_model_run.py
+```
+
+```{important}
+Do not forget that the memory requirements you specify are per CPU. In the above example, you are requesting two CPUs and 16 GB of memory per CPU, for a total of 32 GB of memory. See further below for information on how to determine how many CPUs and how much memory you need.
 ```
 
 In this case, the example file is pointing to a python script (`my_national_model_run.py`) that is what you are asking to run. Please notice that the path to the file is preceded by `../`. This means that the path is one directory level up compared to where this example `test_job.sbatch` is stored.
@@ -120,3 +125,16 @@ A few minutes later you should see an output log file of the with a name like `s
 You should also see the results from the model run in your results folder.
 
 To check the status of a job while it is in the queue, you can type: `squeue -u <your-username>`
+
+
+## Determining the resources to request on the cluster
+
+It is important to request just enough resources on the cluster for your job to run, and no more, in order not to waste computational resources. This applies both to the number of CPUs requested and the amount of memory. Generally, Calliope does not benefit from having a large number of CPUs available since the computationally most intensive part - solving the optimisation problem - is not parallelisable. So it makes sense to request few (e.g. two) CPUs. Memory use is more difficult. Large models require a lot of memory. If you are unsure about the memory required, you can run a first test job and once it has run, look at the resources actually used:
+
+`seff [job_id]`
+
+The output of `seff` will tell you what resources you requested, what resources you actually used, and the resulting resource use efficiency. Ideally you want to be as close to 100% as possible so as not to waste resources that are reserved for you on the cluster but never used.
+
+```{important}
+Be a good citizen on the cluster and take your resource use efficiency seriouly! If you consistently request more resources than you need, do not be surprised if you are contacted by cluster support and/or if your access to the cluster is limited.
+```
