@@ -98,7 +98,7 @@ To do so, create an empty text file and name it, e.g., `test_job.sbatch`. Then, 
 #SBATCH --time=01:00:00
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=2
-#SBATCH --mem-per-cpu=16G
+#SBATCH --mem-per-cpu=64G
 #SBATCH --mail-type=END
 #SBATCH --account=research-tpm-ess ### If you are a MSc student, please use the following account code: --account=education-<faculty>-msc
 
@@ -106,7 +106,7 @@ srun ../my_national_model_run.py
 ```
 
 ```{important}
-Do not forget that the memory requirements you specify are per CPU. In the above example, you are requesting two CPUs and 16 GB of memory per CPU, for a total of 32 GB of memory. See further below for information on how to determine how many CPUs and how much memory you need.
+Do not forget that the memory requirements you specify are per CPU. In the above example, you are requesting two CPUs and 64 GB of memory per CPU, for a total of 128 GB of memory. See further below for information on how to determine how many CPUs and how much memory you need.
 ```
 
 In this case, the example file is pointing to a python script (`my_national_model_run.py`) that is what you are asking to run. Please notice that the path to the file is preceded by `../`. This means that the path is one directory level up compared to where this example `test_job.sbatch` is stored.
