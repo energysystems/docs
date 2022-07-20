@@ -84,6 +84,8 @@ TOKENSERVER=flexserv-x1.tudelft.nl
 PORT=27099
 ```
 
+You can confirm that your installation is licensed by running `gurobi_cl --tokens`, which should show you how many licenses are currently in use.
+
 ## Setting up a cluster job and running
 
 To run your model, you'll need to set up a cluster job. That's the only additional step required compared to running on your local machine. For generic information of what this means, you can once more have a look at [DelftBlue's documentation on the Slurm scheduler](https://gitlab.tudelft.nl/dhpc/docs/-/wikis/Slurm-scheduler).
