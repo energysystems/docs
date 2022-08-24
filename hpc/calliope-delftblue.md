@@ -2,7 +2,7 @@
 
 ## Installation (basic Calliope + Gurobi)
 
-Having set-up the basic cluster access (see the cluster [Wiki](https://gitlab.tudelft.nl/dhpc/docs/-/wikis/home)), you need first of all to load some software modules with the following commands:
+Having set-up the basic cluster access (see the cluster [Wiki](https://doc.dhpc.tudelft.nl/delftblue/)), you need first of all to load some software modules with the following commands:
 
 ```bash
 module load 2022r2
