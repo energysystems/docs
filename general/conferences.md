@@ -52,13 +52,30 @@
 **Website**: [www.isngi.org](https://isngi.org/call-for-abstracts/)
 
 
+
+## ECOS
+
+**In brief**: ECOS is the name of a series of international conferences that focus on modern aspects of Thermal Sciences with particular emphasis on Thermodynamics and its applications in energy conversion systems and processes (rumor has it that this is a fun one!!).
+
+**What you should prepare**: First round: an abstract (250). Second round: a full paper (12 pages ish) for peer-review.
+
+**What you can present**: Oral or posters. 
+
+**Publishing options**: All presented papers will be published in the Conference Proceedings. Best papers will be selected and recommended for possible publication in special issues of some scientific journals. Note that they have to be reviewed based on journal regulations.
+
+**Next chance to participate**: 2023 (deadlines for abstract submission: Nov 30th; the conference is in June)
+
+**Website**: [ecos2023.com](https://ecos2023.com/)
+
+
 ----for PhD students------
 ## IIASA YSSP PhD summer school
 
-**In brief**: 3-month fully funded summer school at IIASA, Austria (Check whether your home country could provide this scholarship. Last time Italy does not.) Nice networking and learning opportunities for ealry-stage PhD students (although I, Fei, didn't get in this year). @Stefan and Tony Patt worked there before. It makes sense to approach them for more info.
+**In brief**: 3-month fully funded summer school at IIASA, Austria (Check whether your home country could provide this scholarship. Last time Italy does not.) Nice networking and learning opportunities for ealry-stage PhD students. @Stefan and Tony Patt worked there before. It makes sense to approach them for more info.
 
 **What you can expect**: Collaborating with one research group at IIASA aiming to publish a nice paper together. Also a good way to expand your network.
 
+**What you should prepare**: Find overlaps with researchers at IIASA and draft a research proposal with them in well advance.
 
 **Next chance to participate**: Fall 2022 - Ealry 2023 (Application&Research proposal); Summer school (June - August, three months with full shcolarship)
 **Website**: [https://previous.iiasa.ac.at/web/home/education/yssp/Apply/ConditionsEligibility/Application_Information.html](https://previous.iiasa.ac.at/web/home/education/yssp/Apply/ConditionsEligibility/Application_Information.html)
