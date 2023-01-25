@@ -26,15 +26,15 @@ This will create a new Anaconda environment based on the requirements specified 
 Activate the environment from your anaconda terminal by typing: `conda activate eurocalliope_2022_02_08` (or your environment name, if different). You are all set!
 
 
-# Understanding the model structure
+## Understanding the model structure
 
-## Projection year
+### Projection year
 The model directory is divided into two main sub-directories based on the model projection year: 2030 or 2050. The difference between the two lies in technology cost projections and which technologies and demand types are considered. Some key aspects to keep in mind:
 
 - Technology costs in 2050 are, by default, cost projections for 2050. The same applies to 2030. This implies that the technologies are deployed very close to the optimisation horizon. If a more conservative approach is desired, one might run 2050 based on 2030 cost overrides (e.g., those in the folder `/2022-02-08_custom/2050/model/overrides-2030`). But no alternative cost assumption is available for 2030 itself)
 - Emissions in 2030 do not include industrial feedstock emissions. This is because the demand for methanol itself (`demand_industry_methanol`, the fuel that synthesises all industrial feedstock in the model) is removed from the model.
 
-## Spatial resolution
+### Spatial resolution
 Within each projection-year directory, there are: a `model` folder and two folders named after the possible options for the spatial resolution. By default, `eurospores` and `national`. 
 1. `eurospores` is the model resolution used in the Joule paper cited above and corresponding to a grid topology of 98 nodes across all the European countries covered by the model. Such a grid topology is based on the e-Higway project and represents a "realistic" approximation of the key existing transmission bottlenecks;
 2. `national` is the resolution in which the sub-national nodes existing in the `eurospores` topology are merged, leading to a one-node-per-country topology.
@@ -49,7 +49,7 @@ In addition, the `model` folder includes two sub-folders that distinguish again 
 
 It is worth noting that most of the .yaml files in this sub-folders exist in multiple copies, named after the corresponding weather year. This occurs whenever weathers-specific parameters exist. The .csv files, instead, include all the possible weather years within themselves.
 
-## Overrides and scenarios
+### Overrides and scenarios
 It is worth noting that the .yaml files discussed above are separated by energy sector as much as possible. For instance, heat-specific or mobility-specific technologies and constraints are defined in distinct files, and they are defined as `overrides` to the basic model setup. This means that, to a certain extent, it is possible to apply only some of these `overrides` and, in such a way, customise the model scope.
 
 A typical list of `overrides` to include all of the model features and sectors, shall be like the following: 
@@ -78,7 +78,7 @@ The meaning of these overrides is reported in the `README.md` file. We repeat it
 
 * `synfuel_transmission`: Enables methane and diesel to be distributed around all model regions, without losses. This can be useful to ensure that if diesel/methane is produced in region A for transport/heating, it can be consumed in region B.
 
-# Running and analysing the model
+## Running and analysing the model
 In principle, the model can be interpreted by Calliope and run in the same fashion as the tutorials provided in the Calliope documentation. However, the Sector-Coupled Euro-Calliope model includes a few custom constraints that are not part of the basic Calliope code and that, therefore, cannot be seamlessly interpreted. The reason for these constraints not being part of the Calliope framework by default is that they mostly make sense within the design of the Sector-Coupled Euro-Calliope model only, and are not necessarily applicable to other Calliope models.
 
 What this means in practice, is that the `model creation` step will fail to recognise some of the constraints defined in the .yaml files, and that is fine. In fact, the `model run` step will include ad-hoc code to recover all these "custom constraints" and add them on top of the previously created model.This two-step approach is reflected in the two Python scripts found in the top-level directory: `create_input.py` and `run.py`, which need to be run in sequence.
