@@ -3,15 +3,23 @@
 ## Premise
 This short wiki is intended for users that already have a basic knowledge of the Calliope modelling framework. If you don't, please have a look at [Calliope's documentation](https://calliope.readthedocs.io/en/stable/index.html) first. It is especially advised to have at least tried to run "[Tutorial #1](https://calliope.readthedocs.io/en/stable/user/tutorials.html)" successfully.
 
+In particular, you must already have installed the [Anaconda Python distribution](https://www.anaconda.com/products/distribution).
+
 In fact, the Sector-Coupled Euro-Calliope model is nothing but a set of text (.yaml) and .csv files that can be interpreted and run within a Calliope environment. No different from the tutorials suggested above, only much larger and more detailed.
 
 ## Download and setup
 
+Before continuing, if you are on Windows, download and run the installer for the [git version control system]([https://git-scm.com/](https://git-scm.com/download/win)), which is not available on Windows by default.
+
+In addition, to speed up the various installation steps below, we will install "mamba", a faster version of the "conda" package manager for the Anaconda distribution. To do so, run this command in a terminal window:
+
+`conda install -c conda-forge mamba`
+
 There are various ways to download the Sector-Coupled Euro-Calliope model and set up a suitable Calliope environment for using and running it. 
 
-1. You can directly download the version of the model files used in the [Joule publication](https://www.cell.com/joule/fulltext/S2542-4351(22)00236-7?_returnURL=https%3A%2F%2Flinkinghub.elsevier.com%2Fretrieve%2Fpii%2FS2542435122002367%3Fshowall%3Dtrue) that marked the first peer-reviewed use of the model. Those are permanently stored on Zenodo as "[Pre-built Sector-coupled Euro-Calliope Model](https://zenodo.org/record/5774988#.Y8eyVv7MKUl)". This is the suggested option if you do not require radical changes to the model, such as a complete revisitation of the model nodes and grid topology.
+1. You can work with the version of the model files used in the [Joule publication](https://doi.org/10.1016/j.joule.2022.05.009) that marked the first peer-reviewed use of the model. We provide an [updated version of that model for you to download here](https://edu.nl/epupe). Download the zip file and unzip it on your computer (note that this is a slightly different version than the one stored on Zenodo as associated with the publication as "[Pre-built Sector-coupled Euro-Calliope Model](https://zenodo.org/record/5774988#.Y8eyVv7MKUl)"). After unzipping, also unzip the `2050.zip` file inside the unzipped folder (you can leave aside 2030 for now, as we will focus on the 2050 version). This is the suggested option if you do not require radical changes to the model, such as a complete revisitation of the model nodes and grid topology.
 
-2. You can download a customised version of the above pre-built model that subsets the problem to the North-Sea region with a spatial resolution of one node per country only. The latter is accessible [here](https://surfdrive.surf.nl/files/index.php/s/mZE64jCJamytBZt) and is meant for students that do not have access to enough computational power to run the full model.
+2. You can also download a customised version of the above pre-built model that subsets the problem to the North-Sea region with a spatial resolution of one node per country only. The latter is accessible [here](https://surfdrive.surf.nl/files/index.php/s/mZE64jCJamytBZt) and is meant for students that do not have access to enough computational power to run the full model.
 
 3. In principle, it is possible to download, install and run the whole workflow that *generates* the very model files for complete customisation and adaptation. The workflow is based on Snakemake and is available on [GitHub](https://github.com/calliope-project/sector-coupled-euro-calliope). However, we are still in the process of cleaning and perfecting the workflow towards user-friendliness. It is not guaranteed that it will work seamlessy on any machine. This is the ***least recommended*** option for non-expert users.
 
@@ -19,7 +27,7 @@ Having obtained the model files by one of the above methods, you need to setup a
 
 - activating your Anaconda distribution (e.g., opening a terminal and typing `conda activate`)
 - moving to the directory where the model files are stored (e.g., `../2022-02-08/` for the case of the Zenodo release)
-- and typing: `conda env create -f requirements.yml`
+- and typing: `mamba env create -f requirements.yml`
 
 This will create a new Anaconda environment based on the requirements specified in the .yml file that accompanies the pre-built model. The name of the environment is given in the same file. By default, it is `eurocalliope_[version]`. For example, `eurocalliope_2022_02_08`.
 
