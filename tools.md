@@ -7,4 +7,5 @@
 
    tools/conda
    tools/gurobi
+   tools/sector-coupled-euro-calliope-hands-on.md
 ```
