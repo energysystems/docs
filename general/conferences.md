@@ -1,6 +1,6 @@
 # Conferences of interest for what we do
 
-## EMP-E, Energy Modelling Platform for Europe
+## ECEMF (former EMP-E), Energy Modelling Platform for Europe
 
 **In brief**: yearly conference in which European energy system modellers meet among themselves and with officers from the European Commission to present and discuss the latest findings. The conference is always hosted by an ongoing energy modelling project funded by the Commission. In 2022, it will be ECEMF.
 
@@ -10,7 +10,7 @@
 
 **Next chance to participate**: 2022 (date yet to be communicated; last year, it was the end of September)
 
-**Website**: [www.energymodellingplatform.eu](www.energymodellingplatform.eu)
+**Website**: formerly [www.energymodellingplatform.eu](www.energymodellingplatform.eu), now [https://www.ecemf.eu/ecemp/ecemp-2023/](https://www.ecemf.eu/ecemp/ecemp-2023/)
 
 
 ## Open Energy Modelling Initiative (OpenMod) workshops
@@ -68,6 +68,44 @@
 **Website**: [ecos2023.com](https://ecos2023.com/)
 
 
+## Energy informatics
+**In brief**:
+
+**What you can present**:
+
+**Publishing options**:
+
+**Next chance to participate**:
+
+**Website**: [www.energy-informatics2023.org](https://www.energy-informatics2023.org/)
+
+
+## Power system computation conference
+
+**In brief**:
+
+**What you can present**:
+
+**Publishing options**:
+
+**Next chance to participate**:
+
+**Website**: [https://pscc.epfl.ch/openconf.php](https://pscc.epfl.ch/openconf.php)
+
+
+## SDEWES
+
+**In brief**:
+
+**What you can present**:
+
+**Publishing options**:
+
+**Next chance to participate**:
+
+**Website**: [https://www.dubrovnik2023.sdewes.org/](https://www.dubrovnik2023.sdewes.org/)
+
+
 ----for PhD students------
 ## IIASA YSSP PhD summer school
 
@@ -79,3 +117,29 @@
 
 **Next chance to participate**: Fall 2022 - Ealry 2023 (Application&Research proposal); Summer school (June - August, three months with full shcolarship)
 **Website**: [https://previous.iiasa.ac.at/web/home/education/yssp/Apply/ConditionsEligibility/Application_Information.html](https://previous.iiasa.ac.at/web/home/education/yssp/Apply/ConditionsEligibility/Application_Information.html)
+
+
+## DTU PES Summer school
+
+**In brief**:
+
+**What you can present**:
+
+**Publishing options**:
+
+**Next chance to participate**:
+
+**Website**: [https://energy-markets-school.dk/](https://energy-markets-school.dk/)
+
+
+## ETH Summer school: Energy Technology, Policy and Politics
+
+**In brief**:
+
+**What you can present**:
+
+**Publishing options**:
+
+**Next chance to participate**:
+
+**Website**: [https://esc.ethz.ch/education/summer-school-2023.html](https://esc.ethz.ch/education/summer-school-2023.html)
