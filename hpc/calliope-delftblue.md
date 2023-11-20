@@ -140,3 +140,24 @@ The output of `seff` will tell you what resources you requested, what resources 
 ```{important}
 Be a good citizen on the cluster and take your resource use efficiency seriouly! If you consistently request more resources than you need, do not be surprised if you are contacted by cluster support and/or if your access to the cluster is limited.
 ```
+
+
+## Running out of space in /home directory
+
+Package managers such as conda are known to install a lot of tiny files locally. These local installations might occupy a lot of space and often use your `/home` directory as their default destination.
+No problem! You might want to create these directories on the `/scratch` storage and link to them in your `/home` directory.
+
+You can do that by simply moving your `/home/${USER}/.conda` directory to your `/scratch` and then link it to the `/home` folder. In this way, the `/home` folder will contain only the link to the `/scratch/${USER}/.conda` directory.
+
+```bash
+ln -s /scratch/${USER}/.conda $HOME/.conda
+```
+
+In case you are setting up the link before creating any enviroment you might want to create an empty `/.conda` folder in your `/scratch`.
+
+```bash
+mkdir -p /scratch/${USER}/.conda
+```
+
+In any case, you will not need to create the link to any other working folders. You can simply load your working folder (project folder, model-config folder, your script folder, etc.) on the `/scratch` directory.
+For additional info check the [DelftBlue docs](https://doc.dhpc.tudelft.nl/delftblue/howtos/conda/).
