@@ -6,5 +6,4 @@
    :caption: Contents
 
    general/tudelft
-   general/conferences
 ```
